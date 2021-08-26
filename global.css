@@ -6,12 +6,12 @@ Variables
 
 :root {
   /* dark shades of primary color*/
-  --clr-primary-1: #282466;
-  --clr-primary-2: #36328c;
-  --clr-primary-3: #4540b3;
-  --clr-primary-4: #544dd9;
+  --clr-primary-1: #7d5013;
+  --clr-primary-2: #aa7a39;
+  --clr-primary-3: #fcd7a5;
+  --clr-primary-4: #ffeacc;
   /* primary/main color */
-  --clr-primary-5: hsl(243, 100%, 68%);
+  --clr-primary-5: hsl(39, 100%, 27%);
   /* lighter shades of primary color */
   --clr-primary-6: hsl(243, 100%, 73%);
   --clr-primary-7: hsl(243, 100%, 77%);
