@@ -17,18 +17,27 @@ exports.handler = async (event, context) => {
             if(product.error){
                 console.log(product)
                 return {
+                    headers:{
+            'Access-Control-Allow-Origin': '*'
+        },
                     statusCode:404,
                     body: `No product with id : ${id}`,
                 }
             }
             //else we found it
             return {
+                headers:{
+            'Access-Control-Allow-Origin': '*'
+        },
                 statusCode:200,
                 body: JSON.stringify(product),
             }
         } catch (error) {
             //case the was some error
             return {
+                headers:{
+            'Access-Control-Allow-Origin': '*'
+        },
                 statusCode:500,
                 body: 'server error',
             }
@@ -45,11 +54,17 @@ exports.handler = async (event, context) => {
         })
         
         return {
+            headers:{
+            'Access-Control-Allow-Origin': '*'
+        },
         statusCode: 200,
         body: JSON.stringify(products)
         }
         } catch (error) {
             return {
+                headers:{
+            'Access-Control-Allow-Origin': '*'
+        },
             statusCode: 500,
             body: 'general server error',
         }
