@@ -14,6 +14,7 @@ exports.handler = async (event, context) => {
         try {
             const product = await airtable.retrieve(id)
             //case object is error, means no product id found
+            console.log(product.id, product.fields)
             if(product.error){
                 console.log(product)
                 return {
@@ -30,7 +31,7 @@ exports.handler = async (event, context) => {
             'Access-Control-Allow-Origin': '*'
         },
                 statusCode:200,
-                body: JSON.stringify(product),
+                body: JSON.stringify({id, ...product.fields}),
             }
         } catch (error) {
             //case the was some error
