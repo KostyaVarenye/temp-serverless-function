@@ -10,7 +10,7 @@ const fetchProducts = async ()=>{
         const id = window.location.search
         //axios.get will return what we need as ?id=rec3Ccaa1s0lmQVZu
         const {data:{fields}} = await axios.get(`/api/3-z-complete${id}`)
-        const {name, desc,price,image} = fields
+        const {name, artist,price,image} = fields
         result.innerHTML = `<h1 class="title">${name}</h1>
                             <article class="product">
                                 <img class="product-img"
@@ -20,7 +20,7 @@ const fetchProducts = async ()=>{
                                 <div class="product-info">
                                 <h5 class="title">${name}</h5>
                                 <h5 class="price">$${price}</h5>
-                                <p class="desc">${desc}</p>
+                                <p class="artist">${artist}</p>
                                 </div>
                             </article>`
 
