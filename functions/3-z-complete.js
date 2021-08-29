@@ -14,7 +14,6 @@ exports.handler = async (event, context) => {
         try {
             const product = await airtable.retrieve(id)
             //case object is error, means no product id found
-            console.log(product.id, product.fields)
             if(product.error){
                 console.log(product)
                 return {
@@ -35,6 +34,7 @@ exports.handler = async (event, context) => {
             }
         } catch (error) {
             //case the was some error
+            console.log(error)
             return {
                 headers:{
             'Access-Control-Allow-Origin': '*'
@@ -51,8 +51,6 @@ exports.handler = async (event, context) => {
             const {id} = product;
             const {name, artist, album, genre, price, featured} = product.fields
             const image = product.fields.image[0].url
-            console.log(image)
-            console.log(featured)
             return {id, name, artist, album, genre, image, price, featured}
         })
         
