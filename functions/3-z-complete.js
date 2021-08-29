@@ -49,7 +49,7 @@ exports.handler = async (event, context) => {
         const products = records.map((product)=>{
             const {id} = product;
             const {name, artist, album, genre, image, price} = product.fields
-            const url = image[0].url
+            const image = image
             return {id, name, artist, album, genre, url, price}
         })
         
