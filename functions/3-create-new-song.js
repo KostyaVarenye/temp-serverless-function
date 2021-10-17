@@ -7,7 +7,7 @@ var base = new Airtable({apiKey: process.env.AIRTABLE_API_KEY})
 
 exports.handler = async (event, context)=>{
     const {name, url, price, artist,genre, album, contractAddress} = JSON.parse(event.body);
-    console.log(name,desc,url,price,artist,album)
+    console.log(name,url,price,artist,album,genre,contractAddress)
 
     base('songs').create([
     {
